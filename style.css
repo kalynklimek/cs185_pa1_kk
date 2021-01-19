@@ -1,11 +1,17 @@
 /*
 OUTSIDE RESOURCES USED:
 CSS nav bar help: https://stackoverflow.com/questions/5995405/how-to-center-a-navigation-bar-with-css-or-html#:~:text=Make%20your%20div%20container%20the,that%20should%20center%20it.
-
+flex css: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 */
 
+.bg {
+  background-color: black;
+}
+
+/* NAV BAR STYLING */
 .main_nav_bar {
   text-align: center; /* center the links in nav bar */
+  border: 2px solid white;
   margin: 0 auto;
 }
 
@@ -26,4 +32,43 @@ CSS nav bar help: https://stackoverflow.com/questions/5995405/how-to-center-a-na
 .main_nav_bar a {
   color: white;
   text-decoration: none; /* get rid of underline from link */
+}
+
+/* .main_nav_bar a:checked {
+  text-decoration: underline;
+} */
+
+/* BACK TO MAIN PAGE BUTTON */
+.go-back {
+  text-align: right;
+  padding: 5px;
+}
+
+.go-back a {
+  color: white;
+}
+
+/* MAIN PAGE TEXT STYLING */
+.opening-text {
+  text-align: center;
+  margin-top: 100px;
+  border: 2px solid white;
+}
+
+h1 {
+  font-size: 25px;
+  color: white;
+}
+
+/* VIDEO STYLING */
+.video-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+.video-container video {
+  padding: 20px;
 }
