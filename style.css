@@ -1,0 +1,29 @@
+/*
+OUTSIDE RESOURCES USED:
+CSS nav bar help: https://stackoverflow.com/questions/5995405/how-to-center-a-navigation-bar-with-css-or-html#:~:text=Make%20your%20div%20container%20the,that%20should%20center%20it.
+
+*/
+
+.main_nav_bar {
+  text-align: center; /* center the links in nav bar */
+  margin: 0 auto;
+}
+
+.main_nav_bar ul{
+  background-color: black;
+  margin: 0;
+  padding: 0;
+}
+
+.main_nav_bar li {
+  display: inline-block;
+  padding: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+.main_nav_bar a {
+  color: white;
+  text-decoration: none; /* get rid of underline from link */
+}
