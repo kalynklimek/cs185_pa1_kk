@@ -6,7 +6,9 @@
         <title>Text - CS 185 PA 1</title>
         <link href='style.css' rel='stylesheet' />
     </head>
+
     <body class="bg">
+        <!-- NAV BAR -->
         <nav class="main_nav_bar">
           <ul>
             <li><a href="text.html">text</a>
@@ -19,5 +21,34 @@
         <nav class="go-back">
           <a href="index.html">back to main page</a>
         </nav>
+
+        <!-- FORM CONTENT -->
+        <div class="form-div">
+          <h2>tell me about you!</h2>
+          <form class="text-form">
+              <label for="name">name:</label>
+              <input type="text" id="name" name="name"><br>
+
+              <label for="school">school:</label>
+              <input type="text" id="school" name="school"><br>
+
+              <label for="major">major:</label>
+              <input type="text" id="major" name="major"><br>
+
+              <br><label>school year:</label><br>
+              <input type="radio" id="first" name="syear" value="first">
+              <label for="first">first year</label><br>
+              <input type="radio" id="second" name="syear" value="second">
+              <label for="second">second year</label><br>
+              <input type="radio" id="third" name="syear" value="third">
+              <label for="third">third year</label><br>
+              <input type="radio" id="fourth" name="syear" value="fourth">
+              <label for="fourth">fourth year</label><br>
+              <input type="radio" id="other" name="syear" value="other">
+              <label for="other">> fourth year</label><br><br>
+
+              <input type="submit" value="submit">
+          </form>
+        </div>
     </body>
 </html>
