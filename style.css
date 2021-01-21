@@ -35,10 +35,6 @@ removing border and highlight when video is clicked: https://stackoverflow.com/q
   text-decoration: none; /* get rid of underline from link */
 }
 
-/* .main_nav_bar a:checked {
-  text-decoration: underline;
-} */
-
 /* ---------------- BACK TO MAIN PAGE BUTTON ---------------- */
 .go-back {
   text-align: right;
@@ -49,7 +45,7 @@ removing border and highlight when video is clicked: https://stackoverflow.com/q
   color: white;
 }
 
-/* ------------------ MAIN PAGE AND TEXT STYLING -------------- */
+/* ------------------ MAIN PAGE AND HEADER STYLING -------------- */
 .opening-text {
   text-align: center;
   margin-top: 20px;
