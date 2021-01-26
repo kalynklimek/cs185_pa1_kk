@@ -35,6 +35,10 @@ removing border and highlight when video is clicked: https://stackoverflow.com/q
   text-decoration: none; /* get rid of underline from link */
 }
 
+.main_nav_bar li:hover {
+  background-color: #696969;
+}
+
 /* ---------------- BACK TO MAIN PAGE BUTTON ---------------- */
 .go-back {
   text-align: right;
@@ -68,7 +72,7 @@ h4 {
   text-align: center;
 }
 
-/* -------------- TEXT PAGE STYLING ------------------ */
+/* -------------- GENERAL FORM STYLING ------------------ */
 .form-div {
   width: 20%;
   display: block;
@@ -77,13 +81,26 @@ h4 {
   margin-right: auto;
 }
 
-.text-form {
-  font-size: 20px;
+.form {
+  /* font-size: 20px; */
   padding: 10px;
   color: white;
   border: 2px solid white;
 }
 
+.form label {
+  font-size: 20px;
+}
+
+.form p {
+  font-size: 15px;
+}
+
+.form input[type=email] {
+  width: 90%;
+}
+
+/* -------------- TEXT PAGE STYLING ------------------ */
 .typed-section label {
   width: 30%;
 }
@@ -154,4 +171,9 @@ tr {
   color: white;
   table-layout: fixed;
   border-collapse: collapse;
+}
+
+/* -------------- EMAIL PAGE STYLING ------------------ */
+#form-before-submit {
+  padding-bottom: : 20px;
 }

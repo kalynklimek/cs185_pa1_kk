@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8' />
+
+        <title>Text - CS185 PR1 KK</title>
+
+        <!-- CSS STYLING SHEET BELOW -->
+        <link href='style.css' rel='stylesheet' />
+    </head>
+
+    <body class="bg">
+        <!-- NAV BAR -->
+        <nav class="main_nav_bar">
+          <ul>
+            <li><a href="text.html">text</a>
+            <li><a href="image.html">image</a>
+            <li><a href="video.html">video</a>
+            <li><a href="table.html">table</a>
+            <li><a href="email.html">email</a>
+          <ul>
+        </nav>
+
+        <nav class="go-back">
+          <a href="index.html">back to main page</a>
+        </nav>
+
+        <!-- FORM CONTENT -->
+        <div class="form-div">
+          <h2>email validation</h2>
+          <form class="form" id="email-form">
+            <div id="form-before-submit">
+              <label for="email">enter your email:</label>
+              <input type="email" id="email" name="email">
+
+              <p id="email-val-msg"></p>
+            </div>
+
+            <input type="submit" value="submit">
+          </form>
+        </div>
+
+        <!-- add script once everything is done loading -->
+        <script type="text/javascript" src="script.js"></script>
+    </body>
+</html>
