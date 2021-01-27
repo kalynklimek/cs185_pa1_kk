@@ -39,6 +39,10 @@ removing border and highlight when video is clicked: https://stackoverflow.com/q
   background-color: #696969;
 }
 
+/* .active_navpage {
+  text-decoration: underline;
+} */
+
 /* ---------------- BACK TO MAIN PAGE BUTTON ---------------- */
 .go-back {
   text-align: right;

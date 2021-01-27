@@ -1,50 +1,83 @@
 // OUTSIDE SOURCES:
-// event listener for forms: https://flaviocopes.com/form-events/
-// textContent: https://www.w3schools.com/jsref/prop_node_textcontent.asp
-// indexOf: https://www.w3schools.com/jsref/jsref_indexof.asp
+// help with document.documentElement and scrollTop for different browsers: https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
+// positioning for button on bottom left corner: https://www.w3schools.com/css/css_positioning.asp
+// syntax of setting attributes for button: https://stackoverflow.com/questions/7707074/creating-dynamic-button-with-click-event-in-javascript
 
 // first initialize variables
-var emailForm;
-var emailInput;
-var emailFormSection;
+var navBarList;
+var body;
+var windowHeight;
 
 initialize();
 
 function initialize() {
-  emailForm = document.getElementById('email-form');
-  emailInput = document.getElementById('email');
-  emailValidationMsg = document.getElementById('email-val-msg');
+  body = document.getElementById('body');
+  navBarList = document.getElementById('nav_bar_list');
 
   console.log("in init");
-  // console.log("email_form: ", emailForm);
-  // console.log("email: ", emailInput);
+
+  //console.log("window href: ", window.location.href);
+  console.log("navBarList: ", navBarList);
 
   // call other functions
-  validateEmail();
+  makeScrollToTop();
+  //getActivePage();
 }
 
-function validateEmail() {
-  emailForm.addEventListener('submit', event => {
-    event.preventDefault();
-    console.log("submitted email");
-    console.log("email value: ", emailInput.value);
+function makeScrollToTop() {
+  windowHeight = window.screen.height;
+  var quarterPage = windowHeight/4;
+  var backToTopBtn = null;
+  window.onscroll = function() {
+    var scroll = document.documentElement.scrollTop;
+    var safariScroll = document.body.scrollTop;
+    if (scroll > quarterPage || safariScroll > quarterPage) {
+      backToTopBtn = document.getElementById('back-to-top-btn');
 
-    var email = emailInput.value;
-    var emailLength = email.length;
-
-    var msg = "";
-
-    // -1 if @ never occurs
-    if (email.indexOf("@") == -1 || (email.substring(emailLength-4) != ".edu" && email.substring(emailLength-4) != ".com")) {
-      console.log("Invalid email address.");
-      msg = "Invalid email address.";
+      // add scroll to top button if it doesn't exist
+      if (backToTopBtn == null) {
+        var btn = document.createElement("button");
+        btn.setAttribute('id', 'back-to-top-btn');
+        btn.setAttribute("style","position: fixed;bottom:0;left:0;margin:10px;");
+        var btn_text = document.createTextNode("back to top");
+        btn.appendChild(btn_text);
+        document.body.appendChild(btn);
+        btn.setAttribute("onclick", "document.documentElement.scrollTop = 0;document.body.scrollTop = 0;");
+      }
+      // make sure button is showing
+      else {
+        backToTopBtn.style.display = "block";
+      }
     }
-
     else {
-      console.log("Email successfully recorded.");
-      msg = "Email successfully recorded.";
+      // hide button if scroll is less than a quarter of page
+      if (backToTopBtn != null) {
+        backToTopBtn.style.display = "none";
+      }
     }
+  }
+}
 
-    emailValidationMsg.textContent = msg;
-  })
+function getActivePage() {
+  var lis = navBarList.children;
+  var numLis = lis.length;
+  var navLinks = [];
+
+  for (var i = 0; i < numLis; i++) {
+    navLinks[i] = lis[i].children[0]; // make array of nav bar links
+  }
+  // console.log("lis: ", lis);
+  // console.log("navLinks: ", navLinks);
+
+  for (var i = 0; i < numLis; i++) {
+    navLinks[i].addEventListener('click', function() {
+      console.log("this: ", this);
+      // var currentActive = document.getElementsByClassName("active_navpage");
+      // console.log("currentActive: ", currentActive);
+      // if (currentActive != null) { currentActive[0].className = ""; }
+      //this.className = "active_navpage";
+
+      this.style.text_decoration = "underline";
+    })
+  }
 }
