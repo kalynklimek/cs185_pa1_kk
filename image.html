@@ -9,24 +9,25 @@
         <link href='style.css' rel='stylesheet' />
     </head>
 
-    <body class="bg" id="body">
+    <body class="bg">
         <!-- NAV BAR -->
         <nav class="main_nav_bar">
           <ul id="nav_bar_list">
-            <li><a href="text.html">text</a>
-            <li><a href="image.html">image</a>
-            <li><a href="video.html">video</a>
-            <li><a href="table.html">table</a>
-            <li><a href="email.html">email</a>
-          <ul>
+            <li><a href="index.html">home</a></li>
+            <li><a href="text.html">text</a></li>
+            <li class="active"><a href="image.html">image</a></li>
+            <li><a href="video.html">video</a></li>
+            <li><a href="table.html">table</a></li>
+            <li><a href="email.html">email</a></li>
+          </ul>
         </nav>
 
-        <nav class="go-back">
+        <!-- <nav class="go-back">
           <a href="index.html">back to main page</a>
-        </nav>
+        </nav> -->
 
         <!-- IMAGE CONTENT -->
-        <div class="image-container">
+        <div class="image-container" id="images">
             <img src="my_images/malibu.JPG" width="200px" />
             <img src="my_images/sunset_aftermath.JPG" width="200px" />
             <img src="my_images/ocean.JPG" width="200px" />
@@ -38,6 +39,8 @@
             <img src="my_images/sunset.jpg" width="200px" />
             <img src="my_images/posing.jpg" width="200px" />
         </div>
+
+        <div id="overlay-div"></div>
 
         <script src="script.js"></script>
     </body>
