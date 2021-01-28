@@ -12,31 +12,35 @@
     <body class="bg">
         <!-- NAV BAR -->
         <nav class="main_nav_bar">
-          <ul>
-            <li><a href="text.html">text</a>
-            <li><a href="image.html">image</a>
-            <li><a href="video.html">video</a>
-            <li><a href="table.html">table</a>
-          <ul>
-        </nav>
-
-        <nav class="go-back">
-          <a href="index.html">back to main page</a>
+          <ul id="nav_bar_list">
+            <li><a href="index.html">home</a></li>
+            <li class="active"><a href="text.html">text</a></li>
+            <li><a href="image.html">image</a></li>
+            <li><a href="video.html">video</a></li>
+            <li><a href="table.html">table</a></li>
+            <li><a href="email.html">email</a></li>
+          </ul>
         </nav>
 
         <!-- FORM CONTENT -->
         <div class="form-div">
           <h2>tell me about you!</h2>
-          <form class="text-form">
+          <form class="form" id="text-form">
             <div class="typed-section">
-              <label for="name">name:</label>
-              <input type="text" id="name" name="name"><br>
+              <div class="text-input">
+                <label for="name">name:</label>
+                <input type="text" id="name" name="name"><br>
+              </div>
 
-              <label for="school">school:</label>
-              <input type="text" id="school" name="school"><br>
+              <div class="text-input">
+                <label for="school">school:</label>
+                <input type="text" id="school" name="school"><br>
+              </div>
 
-              <label for="major">major:</label>
-              <input type="text" id="major" name="major"><br>
+              <div class="text-input">
+                <label for="major">major:</label>
+                <input type="text" id="major" name="major"><br>
+              </div>
             </div>
 
               <br><label>school year:</label><br>
@@ -54,5 +58,6 @@
               <input type="submit" value="submit">
           </form>
         </div>
+        <script src='script.js'></script>
     </body>
 </html>

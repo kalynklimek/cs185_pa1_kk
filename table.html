@@ -12,16 +12,14 @@
     <body class="bg">
         <!-- NAV BAR -->
         <nav class="main_nav_bar">
-          <ul>
-            <li><a href="text.html">text</a>
-            <li><a href="image.html">image</a>
-            <li><a href="video.html">video</a>
-            <li><a href="table.html">table</a>
-          <ul>
-        </nav>
-
-        <nav class="go-back">
-          <a href="index.html">back to main page</a>
+          <ul id="nav_bar_list">
+            <li><a href="index.html">home</a></li>
+            <li><a href="text.html">text</a></li>
+            <li><a href="image.html">image</a></li>
+            <li><a href="video.html">video</a></li>
+            <li class="active"><a href="table.html">table</a></li>
+            <li><a href="email.html">email</a></li>
+          </ul>
         </nav>
 
         <!-- TABLE CONTENT -->
@@ -34,14 +32,15 @@
               <th style="width:75%">description</th>
             </tr>
             <tr>
-              <td><a href="http://class.arts.ucsb.edu/art22/Sites/w_19/students/KalynKlimek/">personal website</a></td>
+              <td class="link"><a href="http://class.arts.ucsb.edu/art22/Sites/w_19/students/KalynKlimek/">personal website</a></td>
               <td>In ART 22, a class I took here at UCSB, I made a personal website to host all of the projects I created in that class. Feel free to click on any project on the webpage to see the different ways I used p5.js, a javascript library, to make computer art. This was my favorite class at UCSB because I was able to take an artistic approach to computer science and express myself.</td>
             </tr>
             <tr>
-              <td><a href="https://vsco.co/kalynklimek/gallery">vsco @kalynklimek</a></td>
+              <td class="link"><a href="https://vsco.co/kalynklimek/gallery">vsco @kalynklimek</a></td>
               <td>On VSCO, the social networking and photo/video editing app, I am able to edit and post a lot of my favorite pictures. Click the link to check out the photos and videos I have created. VSCO is one of my favorite platforms because I am able to express myself and share the way I see the world. Most of the content you see on this site's 'image' and 'video' tab was personally created and/or edited by me using the VSCO application.</td>
             </tr>
           </table>
         </div>
+        <script src="script.js"></script>
     </body>
 </html>

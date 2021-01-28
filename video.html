@@ -17,20 +17,18 @@ video tag: https://www.w3schools.com/html/html5_video.asp
     <body class="bg">
         <!-- NAV BAR -->
         <nav class="main_nav_bar">
-          <ul>
-            <li><a href="text.html">text</a>
-            <li><a href="image.html">image</a>
-            <li><a href="video.html">video</a>
-            <li><a href="table.html">table</a>
-          <ul>
-        </nav>
-
-        <nav class="go-back">
-          <a href="index.html">back to main page</a>
+          <ul id="nav_bar_list">
+            <li><a href="index.html">home</a></li>
+            <li><a href="text.html">text</a></li>
+            <li><a href="image.html">image</a></li>
+            <li class="active"><a href="video.html">video</a></li>
+            <li><a href="table.html">table</a></li>
+            <li><a href="email.html">email</a></li>
+          </ul>
         </nav>
 
         <!-- VIDEO CONTENT -->
-        <div class="video-container">
+        <div class="video-container" id="videos">
             <video width="320" height="240" controls>
               <source src="videos/malibu.MP4" type="video/mp4">
             </video>
@@ -55,5 +53,11 @@ video tag: https://www.w3schools.com/html/html5_video.asp
               <source src="videos/jonah.MP4" type="video/mp4">
             </video>
         </div>
+
+        <div id="overlay-video">
+          <div id="overlay-background"></div>
+        </div>
+
+        <script src="script.js"></script>
     </body>
 </html>
