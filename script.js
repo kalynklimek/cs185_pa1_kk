@@ -4,6 +4,7 @@
 // syntax of setting attributes for button: https://stackoverflow.com/questions/7707074/creating-dynamic-button-with-click-event-in-javascript
 // overlay help: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_overlay_text
 // max width and max height: https://stackoverflow.com/questions/3029422/how-do-i-auto-resize-an-image-to-fit-a-div-container
+// preventDefault: https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
 
 // first initialize variables
 var windowHeight;
@@ -16,8 +17,6 @@ function initialize() {
   imageContainer = document.getElementById('images');
   videoContainer = document.getElementById('videos');
   windowHeight = window.innerHeight;
-
-  console.log("in init");
 
   // call other functions
   makeScrollToTop();
@@ -88,7 +87,10 @@ function imageOverlay() {
             });
 
             // set image css and add to overlay div, transform to get image centered
-            img.setAttribute("style", "position:absolute;top:50%;left:50%;max-width:80%;max-height:80%;transform:translate(-50%,-50%);-ms-transform: translate(-50%,-50%);");
+            img.setAttribute("style", "position:absolute;top:50%;left:50%;max-width:80%;max-height:80%;transform:translate(-50%,-50%);-ms-transform: translate(-50%,-50%);z-index:3");
+            img.addEventListener('click', function() {
+              overlayDiv.style.display = "block";
+            })
             //img.setAttribute("style", "margin:auto;max-width:80%;max-height:80%;");
             overlayDiv.appendChild(img);
         });
@@ -98,9 +100,10 @@ function imageOverlay() {
 
 function videoOverlay() {
     if (videoContainer != null) {
-      var videos = videoContainer.children; // get all images on image page
+      var videos = videoContainer.children; // get all videos on video page
       for (var i = 0; i < videos.length; i++) {
-        videos[i].addEventListener('click', function() {
+        videos[i].addEventListener('click', function(event) {
+            event.preventDefault();
             var clickedVideo = this;
             var clickedSrc = this.children[0].src;
             console.log(clickedSrc);
@@ -111,13 +114,12 @@ function videoOverlay() {
             var newSrc = document.createElement('source');
             newSrc.src = clickedSrc;
             vid.appendChild(newSrc);
-            console.log("new video element: ", vid);
 
             // handle overlay div open and close
             var overlayVid = document.getElementById("overlay-video");
             overlayVid.style.display = "block";
             overlayVid.addEventListener('click', function() {
-                //remove image so empties div
+                //remove video so empties div
                 if (overlayVid.hasChildNodes()) {
                   overlayVid.removeChild(overlayVid.childNodes[0]);
                 }
@@ -126,7 +128,8 @@ function videoOverlay() {
                 overlayVid.style.display = "none";
             });
 
-            // set image css and add to overlay div, transform to get image centered
+            // set video css and add to overlay div, transform to get video centered
+            // help with centering image and video on overlay: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_overlay_text
             vid.setAttribute("style", "position:absolute;top:50%;left:50%;max-width:80%;max-height:80%;transform:translate(-50%,-50%);-ms-transform: translate(-50%,-50%);");
             overlayVid.appendChild(vid);
         });

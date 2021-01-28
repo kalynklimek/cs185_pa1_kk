@@ -3,6 +3,7 @@ OUTSIDE RESOURCES USED:
 CSS nav bar help: https://stackoverflow.com/questions/5995405/how-to-center-a-navigation-bar-with-css-or-html#:~:text=Make%20your%20div%20container%20the,that%20should%20center%20it.
 flex css: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 removing border and highlight when video is clicked: https://stackoverflow.com/questions/16432909/remove-blue-highlight-over-html-image-when-clicked
+overlay help: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_overlay_text
 */
 
 .bg {
@@ -36,22 +37,13 @@ removing border and highlight when video is clicked: https://stackoverflow.com/q
 }
 
 .main_nav_bar li:hover {
-  background-color: #696969;
+  background-color: #404040;
 }
 
 .main_nav_bar li.active {
   text-decoration: underline; /* add underline for active link */
+  background-color: #202020; /* highlight with dark grey */
 }
-
-/* ---------------- BACK TO MAIN PAGE BUTTON ---------------- */
-/* .go-back {
-  text-align: right;
-  padding: 5px;
-}
-
-.go-back a {
-  color: white;
-} */
 
 /* ------------------ MAIN PAGE AND HEADER STYLING -------------- */
 .opening-text {
@@ -90,6 +82,7 @@ h4 {
   padding: 10px;
   color: white;
   border: 2px solid white;
+  text-align: center;
 }
 
 .form label {
@@ -102,16 +95,24 @@ h4 {
 
 .form input[type=email] {
   width: 95%;
+  text-align: center;
 }
 
 /* -------------- TEXT PAGE STYLING ------------------ */
-.typed-section label {
-  width: 30%;
+.text-inpt label {
+  /* width: 30%; */
+  display: inline-block;
 }
 
-.typed-section input[type=text] {
-  float: right;
-  width: 70%;
+.text-input input[type=text] {
+  /* float: right;
+  width: 70%; */
+  display: inline-block;
+}
+
+.text-input {
+  width: 100%;
+  float: center;
 }
 
 /* ------------------ IMAGE STYLING ----------------- */
@@ -151,6 +152,8 @@ h4 {
 }
 
 .video-container video {
+  /* padding-left: 20px;
+  padding-right: 20px; */
   padding: 20px;
 }
 
@@ -170,7 +173,11 @@ th, td {
 }
 
 tr {
-  text-align: left;
+  text-align: center;
+}
+
+th, td.link {
+  text-align: center !important;
 }
 
 .table-div {

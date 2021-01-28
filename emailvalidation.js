@@ -7,6 +7,7 @@
 var emailForm;
 var emailInput;
 var emailFormSection;
+var clear;
 
 initialize();
 
@@ -14,18 +15,16 @@ function initialize() {
   emailForm = document.getElementById('email-form');
   emailInput = document.getElementById('email');
   emailValidationMsg = document.getElementById('email-val-msg');
-
-  console.log("in init");
+  clear = document.getElementById('clear');
 
   // call other functions
   validateEmail();
+  clearForm();
 }
 
 function validateEmail() {
   emailForm.addEventListener('submit', event => {
     event.preventDefault();
-    console.log("submitted email");
-    console.log("email value: ", emailInput.value);
 
     var email = emailInput.value;
     var emailLength = email.length;
@@ -34,15 +33,21 @@ function validateEmail() {
 
     // -1 if @ never occurs
     if (email.indexOf("@") == -1 || (email.substring(emailLength-4) != ".edu" && email.substring(emailLength-4) != ".com")) {
-      console.log("Invalid email address.");
       msg = "Invalid email address.";
     }
 
     else {
-      console.log("Email successfully recorded.");
       msg = "Email successfully recorded.";
     }
 
     emailValidationMsg.textContent = msg;
   })
+}
+
+// clear email input and response message on clicking clear
+function clearForm() {
+  clear.addEventListener('click', function() {
+      emailInput.value = "";
+      emailValidationMsg.textContent = "";
+  });
 }
