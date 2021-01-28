@@ -73,26 +73,25 @@ function imageOverlay() {
             var img = document.createElement('img');
             img.src = clickedImg.src;
 
-            // handle overlay div open and close
+            // handle overlay open and close
+            var overlayImage = document.getElementById("overlay-image");
+            overlayImage.style.display = "block";
+
             var overlayDiv = document.getElementById("overlay-div");
-            overlayDiv.style.display = "block";
             overlayDiv.addEventListener('click', function() {
-                //remove image so empties div
-                if (overlayDiv.hasChildNodes()) {
-                  overlayDiv.removeChild(overlayDiv.childNodes[0]);
+                //remove image from overlay to get ready for next image overlay
+                if (overlayImage.childElementCount == 2) {
+                  overlayImage.removeChild(overlayImage.children[1]);
                 }
 
                 //hide div
-                overlayDiv.style.display = "none";
+                overlayImage.style.display = "none";
             });
 
             // set image css and add to overlay div, transform to get image centered
             img.setAttribute("style", "position:absolute;top:50%;left:50%;max-width:80%;max-height:80%;transform:translate(-50%,-50%);-ms-transform: translate(-50%,-50%);z-index:3");
-            img.addEventListener('click', function() {
-              overlayDiv.style.display = "block";
-            })
             //img.setAttribute("style", "margin:auto;max-width:80%;max-height:80%;");
-            overlayDiv.appendChild(img);
+            overlayImage.appendChild(img);
         });
       }
     }
@@ -104,9 +103,7 @@ function videoOverlay() {
       for (var i = 0; i < videos.length; i++) {
         videos[i].addEventListener('click', function(event) {
             event.preventDefault();
-            var clickedVideo = this;
             var clickedSrc = this.children[0].src;
-            console.log(clickedSrc);
 
             // make a copy of clicked video
             var vid = document.createElement('video');
@@ -118,10 +115,12 @@ function videoOverlay() {
             // handle overlay div open and close
             var overlayVid = document.getElementById("overlay-video");
             overlayVid.style.display = "block";
-            overlayVid.addEventListener('click', function() {
-                //remove video so empties div
-                if (overlayVid.hasChildNodes()) {
-                  overlayVid.removeChild(overlayVid.childNodes[0]);
+
+            var overlayBg = document.getElementById("overlay-background");
+            overlayBg.addEventListener('click', function() {
+                //remove video from overlay to get ready for next video overlay
+                if (overlayVid.childElementCount == 2) {
+                  overlayVid.removeChild(overlayVid.children[1]);
                 }
 
                 //hide div
@@ -130,7 +129,7 @@ function videoOverlay() {
 
             // set video css and add to overlay div, transform to get video centered
             // help with centering image and video on overlay: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_overlay_text
-            vid.setAttribute("style", "position:absolute;top:50%;left:50%;max-width:80%;max-height:80%;transform:translate(-50%,-50%);-ms-transform: translate(-50%,-50%);");
+            vid.setAttribute("style", "position:absolute;top:50%;left:50%;max-width:80%;max-height:80%;transform:translate(-50%,-50%);-ms-transform: translate(-50%,-50%);z-index:3");
             overlayVid.appendChild(vid);
         });
       }
